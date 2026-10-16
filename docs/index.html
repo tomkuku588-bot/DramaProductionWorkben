@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>隐私协议 | AI漫剧工作台</title>
+  <meta name="description" content="AI漫剧工作台隐私协议与用户协议页面，支持中英文切换，可直接部署到 GitHub Pages。">
+  <meta name="color-scheme" content="light">
+  <style>
+    :root {
+      --bg: #f8f5f0;
+      --bg-accent: #ece5f4;
+      --panel: rgba(255, 255, 255, 0.9);
+      --panel-strong: #ffffff;
+      --text: #2b2340;
+      --muted: #6b6480;
+      --brand: #7c3aed;
+      --brand-deep: #5b21b6;
+      --accent: #b45309;
+      --line: rgba(43, 35, 64, 0.12);
+      --shadow: 0 22px 60px rgba(76, 47, 134, 0.14);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --content-width: 1120px;
+      font-family: "Segoe UI Variable Display", "Segoe UI Variable Text", "PingFang SC",
+        "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(124, 58, 237, 0.14), transparent 32%),
+        radial-gradient(circle at 88% 12%, rgba(180, 83, 9, 0.08), transparent 26%),
+        linear-gradient(180deg, #fbf8f4 0%, var(--bg) 52%, #faf7f2 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(43, 35, 64, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(43, 35, 64, 0.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 88%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(var(--content-width), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 48px;
+      position: relative;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      gap: 24px;
+      grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.9fr);
+      padding: 34px;
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(243, 239, 252, 0.96)),
+        linear-gradient(180deg, rgba(124, 58, 237, 0.08), transparent);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      top: -120px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.2), rgba(124, 58, 237, 0));
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brand-deep);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      margin: 0;
+    }
+
+    .hero-subtitle {
+      margin-top: 18px;
+      max-width: 720px;
+      font-size: 1.03rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .hero-summary {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.1);
+      color: var(--brand-deep);
+      font-weight: 600;
+    }
+
+    .hero-summary::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 6px rgba(124, 58, 237, 0.14);
+    }
+
+    .meta-stack {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .meta-card {
+      padding: 18px 18px 16px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(43, 35, 64, 0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .meta-label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .meta-value {
+      display: block;
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .meta-secondary {
+      margin-top: 4px;
+      font-size: 0.96rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      word-break: break-all;
+      color: var(--brand-deep);
+    }
+
+    .contact-link::before {
+      content: "@";
+      width: 28px;
+      height: 28px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.12);
+      color: var(--brand);
+      font-weight: 700;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 16px;
+      z-index: 10;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: space-between;
+      margin: 22px 0;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(43, 35, 64, 0.08);
+      box-shadow: 0 14px 36px rgba(76, 47, 134, 0.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .toolbar-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toolbar-label {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .toggle-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .toggle {
+      appearance: none;
+      border: 1px solid rgba(43, 35, 64, 0.12);
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease,
+        color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .toggle:hover,
+    .toggle:focus-visible {
+      transform: translateY(-1px);
+      outline: none;
+      border-color: rgba(124, 58, 237, 0.38);
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.12);
+    }
+
+    .toggle.active {
+      background: linear-gradient(135deg, var(--brand), var(--brand-deep));
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 12px 22px rgba(124, 58, 237, 0.24);
+    }
+
+    .document-shell {
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .document {
+      display: none;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .document.is-visible {
+      display: block;
+      animation: fade-up 240ms ease;
+    }
+
+    .document-header {
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .document-tag {
+      display: inline-flex;
+      margin-bottom: 16px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.1);
+      color: var(--brand-deep);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .document-title {
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+    }
+
+    .document-meta {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .document-intro {
+      margin-top: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .document section + section {
+      margin-top: 22px;
+    }
+
+    .document h3 {
+      margin: 0 0 10px;
+      font-size: 1.14rem;
+      line-height: 1.45;
+    }
+
+    .document p {
+      margin: 0;
+      color: #3d3355;
+      line-height: 1.9;
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 920px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .toolbar {
+        top: 10px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(var(--content-width), calc(100% - 18px));
+        padding: 18px 0 28px;
+      }
+
+      .hero,
+      .document-shell {
+        padding: 22px;
+      }
+
+      .toolbar {
+        padding: 12px;
+      }
+
+      .toggle {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .toggle-list {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .toggle,
+      .document.is-visible {
+        transition: none;
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div>
+        <p class="eyebrow" data-i18n="eyebrow">Legal Center</p>
+        <h1 data-i18n="heroTitle">AI漫剧工作台协议中心</h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">
+          面向 HarmonyOS 上架场景的双语协议页面，集中展示隐私协议与用户协议，适合直接发布到 GitHub Pages。
+        </p>
+        <div class="hero-summary" id="hero-summary">
+          当前显示：隐私协议
+        </div>
+      </div>
+
+      <aside class="meta-stack">
+        <section class="meta-card">
+          <span class="meta-label" data-i18n="appLabel">应用</span>
+          <span class="meta-value" data-i18n="appNamePrimary">AI漫剧工作台</span>
+          <p class="meta-secondary" data-i18n="appNameSecondary">DramaProductionWorkbench</p>
+          <p class="meta-secondary mono">com.xmgod.dramaworkbench</p>
+        </section>
+
+        <section class="meta-card">
+          <span class="meta-label" data-i18n="contactLabel">联系邮箱</span>
+          <a class="contact-link" id="contact-link" href="mailto:tomkuku588@gmail.com">tomkuku588@gmail.com</a>
+          <p class="meta-secondary" data-i18n="contactHint">
+            如联系邮箱或开发者主体信息发生变化，请同步更新页面内容和上架资料。
+          </p>
+        </section>
+      </aside>
+    </header>
+
+    <nav class="toolbar" aria-label="Document controls">
+      <div class="toolbar-group">
+        <span class="toolbar-label" data-i18n="languageLabel">语言</span>
+        <div class="toggle-list">
+          <button class="toggle" type="button" data-lang-switch="zh">中文</button>
+          <button class="toggle" type="button" data-lang-switch="en">English</button>
+        </div>
+      </div>
+
+      <div class="toolbar-group">
+        <span class="toolbar-label" data-i18n="documentLabel">文档</span>
+        <div class="toggle-list">
+          <button class="toggle" type="button" data-doc-switch="privacy">隐私协议</button>
+          <button class="toggle" type="button" data-doc-switch="terms">用户协议</button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="document-shell">
+      <article class="document" data-lang="zh" data-doc="privacy">
+        <header class="document-header">
+          <span class="document-tag">隐私协议</span>
+          <h2 class="document-title">AI漫剧工作台隐私政策</h2>
+          <div class="document-meta">更新日期：2026-10-16 | 生效日期：2026-10-16</div>
+          <p class="document-intro">
+            欢迎使用AI漫剧工作台（DramaProductionWorkbench）。本政策适用于AI漫剧工作台 HarmonyOS 版本在安装、使用等过程中对信息的处理方式。开发者/运营者为本应用的发布主体，具体以华为应用市场页面公示的实名认证主体为准；联系邮箱为 tomkuku588@gmail.com。本应用是一款离线运行的创作工具，免费、无广告、无需注册。
+          </p>
+        </header>
+
+        <section>
+          <h3>1. 我们处理的信息范围及用途</h3>
+          <p>
+            我们处理的信息主要限于你主动创建、编辑或在使用过程中在本地生成的创作数据，包括漫剧项目、原稿、剧本与剧情、角色／场景／道具等设定资产、分镜与故事板内容、按规则在本地组合的提示词文本、审核记录、图文交付制作包、备份文件、应用设置，以及基于上述信息在本地生成的统计、校验与展示结果。处理这些信息的目的在于实现漫剧项目的组织管理、原稿与剧本整理、设定资产与分镜编辑、提示词的本地组合、交付制作包的生成、页面展示及必要的故障排查。当前版本不提供账号注册或登录，不默认收集手机号、电子邮箱、精准位置信息、通讯录、短信、通话记录、相册、人脸、指纹等个人信息。
+          </p>
+        </section>
+
+        <section>
+          <h3>2. 信息存储地点、期限与删除</h3>
+          <p>
+            上述信息默认存储在你的设备本地应用沙箱内的数据库中，不会上传至开发者服务器，当前版本也不提供云同步。信息保存期限取决于你的使用行为；当你删除创作内容、清空数据、卸载应用或重置设备后，相应数据将在可控范围内被删除。若你未来将应用生成的备份或导出文件另行复制到其他设备、云盘或第三方服务，相关存储行为由你自行决定并负责。
+          </p>
+        </section>
+
+        <section>
+          <h3>3. 权限与系统能力说明</h3>
+          <p>
+            当前版本的核心功能在离线状态下即可完整运行，不以联网为前提，也未申请通知、定位、相机、麦克风、通讯录、短信等敏感系统权限。为实现原稿导入、备份与图文交付制作包导出等可选功能，应用可能调用 HarmonyOS 提供的文件选择、文件保存或系统分享等能力，仅用于完成你明确发起的操作，读取或写入的范围由你在系统选择器中选定。除实现前述功能所必需的系统能力外，当前版本不以后台方式读取无关文件，也不采集与漫剧创作无关的个人信息。若后续版本新增权限或系统能力需求，我们会在相应功能触发前另行说明，并依法取得相应授权。
+          </p>
+        </section>
+
+        <section>
+          <h3>4. 信息共享、转让与公开披露</h3>
+          <p>
+            我们不会将你的个人信息出售、出租、交换或无关共享给第三方，也不会擅自公开披露。仅在以下情形下可能发生信息对外流转：你主动使用系统分享、导出、备份迁移等能力；法律法规、监管机关或司法机关要求；或者为保护你、其他用户或公众的人身财产安全所必需。在上述情形下，我们会在法律允许的范围内采取合理保护措施。
+          </p>
+        </section>
+
+        <section>
+          <h3>5. 第三方 SDK 与对外服务</h3>
+          <p>
+            除 HarmonyOS 系统基础能力外，当前版本不接入广告、商业化统计分析、第三方登录、地图、支付、推送等第三方 SDK，也不向开发者自建服务器或任何外部服务上传你的原稿、剧本、角色、场景、道具、分镜等创作数据。当前版本的应用不在本地或云端调用任何 AI 服务，也不合成视频，仅按预设规则在你的设备本地组合提示词文本，供你自行复制到外部工具使用。若后续版本引入网络 AI 服务或其他第三方服务，我们会同步更新本政策，并在必要时通过弹窗、页面提示或系统授权流程取得你的明示同意。
+          </p>
+        </section>
+
+        <section>
+          <h3>6. 信息安全</h3>
+          <p>
+            我们会采取与当前产品形态相适应的合理安全措施，包括本地化处理、最小必要原则和限制无关数据访问等，以降低信息被未经授权访问、披露、篡改或丢失的风险。但请你理解，任何技术措施都无法保证绝对安全；你仍需妥善保管自己的设备、系统账号以及你自行导出的创作内容文件。
+          </p>
+        </section>
+
+        <section>
+          <h3>7. 你的权利</h3>
+          <p>
+            你可以在应用内查看、更正、补充、删除漫剧项目、原稿、剧本、设定资产、分镜等创作数据，也可以清空本地数据或卸载应用以删除全部信息。由于当前版本不提供在线账号系统，大部分访问、更正、删除、撤回同意等操作可以直接在本地完成；如果你对本政策、数据处理或权限使用有疑问，可以通过本政策载明的联系邮箱与我们联系。
+          </p>
+        </section>
+
+        <section>
+          <h3>8. 未成年人保护</h3>
+          <p>
+            若你是未满 14 周岁的未成年人，应在监护人阅读并同意本政策后使用本应用。我们不会主动面向未成年人提供定向营销，也不会明知而主动收集与本应用功能无关的未成年人个人信息。
+          </p>
+        </section>
+
+        <section>
+          <h3>9. 政策更新与联系我们</h3>
+          <p>
+            当产品功能、处理目的、数据类型、权限使用或适用规则发生实质变化时，我们会更新本政策，并在应用内或页面显著位置进行提示。你可以通过以下方式联系我们：tomkuku588@gmail.com，或访问 GitHub 仓库 https://github.com/tomkuku588-bot/DramaProductionWorkben。
+          </p>
+        </section>
+      </article>
+
+      <article class="document" data-lang="en" data-doc="privacy">
+        <header class="document-header">
+          <span class="document-tag">Privacy Policy</span>
+          <h2 class="document-title">DramaProductionWorkbench Privacy Policy</h2>
+          <div class="document-meta">Updated on 2026-10-16 | Effective on 2026-10-16</div>
+          <p class="document-intro">
+            Welcome to DramaProductionWorkbench (AI Drama Production Workbench). This policy applies to the HarmonyOS version of the app and explains how information is handled when you install and use it. The developer/operator is the entity publishing the app, as displayed on the AppGallery listing under the verified developer identity. The contact email is tomkuku588@gmail.com. The app is an offline creation tool that is free, ad-free, and requires no registration.
+          </p>
+        </header>
+
+        <section>
+          <h3>1. What Information We Process and Why</h3>
+          <p>
+            We process mainly the local creative data that you actively create, edit, or generate on-device while using the app, including comic drama projects, manuscripts, scripts and storylines, character/scene/prop setting assets, storyboard content, prompt text assembled locally by rules, review records, image-text delivery packages, backup files, app settings, and the statistics, validation, and display results generated locally from that data. The purposes are project organization, manuscript and script editing, setting-asset and storyboard editing, local prompt assembly, delivery-package generation, page display, and necessary troubleshooting. The current version does not provide account registration or login and does not collect your phone number, email address, precise location, contacts, SMS, call logs, photo library, facial data, fingerprints, or similar personal information by default.
+          </p>
+        </section>
+
+        <section>
+          <h3>2. Storage Location, Retention, and Deletion</h3>
+          <p>
+            The above information is stored by default in a database inside the app sandbox on your device. It is not uploaded to any developer-operated server, and the current version does not provide cloud sync. Retention depends on your own actions. The relevant data can be removed when you delete creative content, clear app data, uninstall the app, or reset the device. If you later copy backup or exported files generated by the app to another device, cloud drive, or third-party service, that storage is controlled by you.
+          </p>
+        </section>
+
+        <section>
+          <h3>3. Permissions and System Capabilities</h3>
+          <p>
+            The core features of the current version run fully offline, do not depend on network access, and the app does not request sensitive system permissions such as notifications, location, camera, microphone, contacts, or SMS. To support optional features such as manuscript import, backup, and exporting image-text delivery packages, the app may invoke HarmonyOS system capabilities such as file picking, file saving, or system sharing solely to complete the action you initiated, and the read or write scope is the file you select in the system picker. Other than what is necessary for those functions, the current version does not read unrelated files in the background and does not collect personal information unrelated to comic drama creation. If a future version adds new permissions or system capabilities, we will explain them before the relevant feature is triggered and obtain authorization where required by law.
+          </p>
+        </section>
+
+        <section>
+          <h3>4. Sharing, Transfer, and Public Disclosure</h3>
+          <p>
+            We do not sell, rent, trade, or otherwise share your personal information with unrelated third parties, and we do not publicly disclose it without authorization. External transfer may occur only when you actively use system sharing, export, or backup migration features; when required by laws, regulators, or courts; or when necessary to protect the personal or property safety of you, other users, or the public. In such cases, we will take reasonable protective measures within the scope permitted by law.
+          </p>
+        </section>
+
+        <section>
+          <h3>5. Third-Party SDKs and External Services</h3>
+          <p>
+            Except for HarmonyOS base system capabilities, the current version does not integrate third-party SDKs for advertising, commercial analytics, social login, maps, payment, or push notifications, and it does not upload your manuscripts, scripts, characters, scenes, props, storyboards, or other creative data to any developer-operated server or external service. The current version of the app does not call any AI service locally or in the cloud and does not synthesize video; it only assembles prompt text on your device according to preset rules, which you may copy into external tools yourself. If a future version introduces network-based AI services or other third-party services, we will update this policy and, where necessary, obtain your explicit consent through notices, dialogs, or system authorization flows.
+          </p>
+        </section>
+
+        <section>
+          <h3>6. Data Security</h3>
+          <p>
+            We adopt reasonable safeguards appropriate to the current product form, including local processing, the minimum-necessary principle, and limiting unnecessary data access, in order to reduce the risk of unauthorized access, disclosure, alteration, or loss. However, no technical measure can guarantee absolute security. You remain responsible for the security of your device, system accounts, and any creative content files you export.
+          </p>
+        </section>
+
+        <section>
+          <h3>7. Your Rights</h3>
+          <p>
+            You can view, correct, supplement, or delete comic drama projects, manuscripts, scripts, setting assets, storyboards, and other creative data in the app, clear local data, or uninstall the app to remove all information. Because the current version does not provide an online account system, most rights related to access, correction, deletion, and withdrawal can be exercised locally on the device. If you have questions about this policy, data handling, or permission use, you may contact us through the email provided in this policy.
+          </p>
+        </section>
+
+        <section>
+          <h3>8. Minors</h3>
+          <p>
+            If you are under the age of 14, you should use the app only after your parent or legal guardian has read and agreed to this policy. We do not knowingly conduct targeted marketing toward minors or intentionally collect personal information from minors that is unrelated to the app's functions.
+          </p>
+        </section>
+
+        <section>
+          <h3>9. Updates and Contact</h3>
+          <p>
+            If there is a material change to product features, processing purposes, data types, permission use, or applicable rules, we will update this policy and provide notice in the app or on a prominent page. You may contact us at tomkuku588@gmail.com, or visit the GitHub repository at https://github.com/tomkuku588-bot/DramaProductionWorkben.
+          </p>
+        </section>
+      </article>
+
+      <article class="document" data-lang="zh" data-doc="terms">
+        <header class="document-header">
+          <span class="document-tag">用户协议</span>
+          <h2 class="document-title">AI漫剧工作台用户协议</h2>
+          <div class="document-meta">更新日期：2026-10-16 | 生效日期：2026-10-16</div>
+          <p class="document-intro">
+            欢迎使用AI漫剧工作台。本协议适用于AI漫剧工作台 HarmonyOS 版本。开发者/运营者为本应用的发布主体，具体以华为应用市场页面公示的实名认证主体为准；联系邮箱为 tomkuku588@gmail.com。你在下载、安装、访问或使用本应用前，应认真阅读本协议及《AI漫剧工作台隐私政策》。
+          </p>
+        </header>
+
+        <section>
+          <h3>1. 协议范围与服务性质</h3>
+          <p>
+            本应用是一款面向漫剧创作的工具型应用，用于漫剧项目管理、原稿与剧本整理、角色／场景／道具等设定资产管理、分集规划、分镜与故事板组织，以及按规则在本地组合提示词文本。本应用离线运行，不在应用内调用 AI 服务、不合成视频，仅提供创作组织与提示词组合能力；应用生成的统计、校验、展示结果及组合后的提示词文本仅供创作参考，不构成专业创作意见、商业承诺或其他专业建议。
+          </p>
+        </section>
+
+        <section>
+          <h3>2. 使用资格与基本规则</h3>
+          <p>
+            你应具备与本协议相适应的民事行为能力，并承诺在符合法律法规及应用市场规则的前提下使用本应用。你不得利用本应用从事违法违规活动，不得制作、存储、传播违反法律法规或公序良俗的内容，不得干扰应用正常运行，也不得以逆向工程、破解、篡改、批量抓取、自动化滥用等方式侵害开发者或其他第三方的合法权益。
+          </p>
+        </section>
+
+        <section>
+          <h3>3. 创作内容与外部工具使用责任</h3>
+          <p>
+            你在应用内创建、编辑、生成、备份或分享的创作数据由你自行决定并负责。你应确保相关内容真实、合法、必要，并且不侵犯任何第三方的著作权、名誉权、肖像权、隐私权或其他合法权益。本应用按规则组合生成的提示词文本仅供你自行复制到外部工具使用，你应将所得结果作为创作参考并在使用前自行审核、判断与修改；因你直接使用未经审核的提示词文本或外部工具生成内容而产生的后果，由你自行承担。
+          </p>
+        </section>
+
+        <section>
+          <h3>4. 数据与备份责任</h3>
+          <p>
+            本应用当前版本以本地处理为主，不默认提供云同步。你可以自行决定是否导出备份或图文交付制作包、保存位置以及是否保留多份副本。因设备损坏、系统重装、误删除、误覆盖、第三方软件处理、第三方云盘同步或你自行分享文件等原因导致的数据丢失、泄露或无法恢复风险，需要由你自行承担。
+          </p>
+        </section>
+
+        <section>
+          <h3>5. 权限、系统能力与第三方服务</h3>
+          <p>
+            当前版本未申请敏感系统权限，核心功能在离线状态下即可运行。除法律法规另有要求或功能实现必需外，当前版本不以内置第三方广告、商业化统计分析、第三方登录、地图、支付、推送等服务作为基础运行条件。若后续版本新增相关权限、系统能力或第三方服务，将以实际版本功能、隐私政策及应用内提示为准。
+          </p>
+        </section>
+
+        <section>
+          <h3>6. 知识产权</h3>
+          <p>
+            除你依法享有权利的创作内容外，本应用的软件、界面设计、文案、结构、图形、标识及相关知识产权均归开发者或合法权利人所有。未经事先书面许可，你不得对本应用实施复制、传播、出租、出借、出售、反向工程、反编译、反汇编、改编或以其他方式超范围使用；法律法规另有明确允许的除外。
+          </p>
+        </section>
+
+        <section>
+          <h3>7. 服务变更、中断与终止</h3>
+          <p>
+            开发者可以根据产品迭代、系统兼容、运营安排、合规要求或安全需要，对应用功能、界面、支持设备范围、服务方式和协议文本进行更新、调整、中断或终止。若你违反本协议、相关法律法规或应用市场规则，开发者有权在合理范围内采取限制功能、暂停服务或停止提供应用等措施。
+          </p>
+        </section>
+
+        <section>
+          <h3>8. 责任限制与免责声明</h3>
+          <p>
+            在法律允许的范围内，本应用将尽力提供稳定服务，但不保证服务绝对连续、无错误、无中断，也不对应用生成的统计、校验、展示结果及组合后的提示词文本的准确性、完整性或适用性作出明示或默示的保证。对于因系统故障、设备兼容性、不可抗力、监管要求或你自身操作不当所导致的使用受限、数据风险或其他损失，开发者将在法律规定范围内承担相应责任。
+          </p>
+        </section>
+
+        <section>
+          <h3>9. 法律适用与争议解决</h3>
+          <p>
+            本协议的订立、生效、解释、履行及争议解决适用中华人民共和国法律。因本协议或本应用使用引起的争议，双方应优先友好协商解决；协商不成的，任一方有权向有管辖权的人民法院提起诉讼。
+          </p>
+        </section>
+
+        <section>
+          <h3>10. 联系方式</h3>
+          <p>
+            如果你对本协议或本应用的使用规则有疑问、意见或建议，可以通过以下方式联系我们：tomkuku588@gmail.com，或访问 GitHub 仓库 https://github.com/tomkuku588-bot/DramaProductionWorkben。
+          </p>
+        </section>
+      </article>
+
+      <article class="document" data-lang="en" data-doc="terms">
+        <header class="document-header">
+          <span class="document-tag">Terms of Service</span>
+          <h2 class="document-title">DramaProductionWorkbench Terms of Service</h2>
+          <div class="document-meta">Updated on 2026-10-16 | Effective on 2026-10-16</div>
+          <p class="document-intro">
+            Welcome to DramaProductionWorkbench. These terms apply to the HarmonyOS version of the app. The developer/operator is the entity publishing the app, as displayed on the AppGallery listing under the verified developer identity. The contact email is tomkuku588@gmail.com. Before downloading, installing, accessing, or using the app, you should read these terms together with the DramaProductionWorkbench Privacy Policy.
+          </p>
+        </header>
+
+        <section>
+          <h3>1. Scope of the Agreement and Nature of the Service</h3>
+          <p>
+            This app is a creation-oriented tool for comic drama production, used for comic drama project management, manuscript and script editing, character/scene/prop setting-asset management, episode planning, storyboard organization, and assembling prompt text locally according to rules. The app runs offline, does not call any AI service within the app, and does not synthesize video; it only provides creation organization and prompt-assembly capabilities. The statistics, validation, and display results and the assembled prompt text generated by the app are for creative reference only and do not constitute professional creative advice, commercial commitments, or any other professional opinion.
+          </p>
+        </section>
+
+        <section>
+          <h3>2. Eligibility and Basic Rules of Use</h3>
+          <p>
+            You should have the civil capacity required to accept these terms and must use the app in compliance with applicable laws, regulations, and app store rules. You may not use the app to engage in illegal activities, create, store, or distribute content that violates laws, regulations, or public morals, interfere with the normal operation of the app, or infringe the rights of the developer or any third party through reverse engineering, cracking, tampering, bulk extraction, abusive automation, or similar conduct.
+          </p>
+        </section>
+
+        <section>
+          <h3>3. Creative Content and Use of External Tools Responsibility</h3>
+          <p>
+            You are responsible for any creative data you create, edit, generate, back up, or share through the app. You should ensure that the content is truthful, lawful, necessary, and does not infringe any third party's copyright, reputation, portrait, privacy, or other legitimate rights. The prompt text that the app assembles by rules is provided only for you to copy into external tools yourself, and you should treat the resulting output as creative reference and review, evaluate, and revise it before use. The consequences of directly using prompt text or externally generated content without review remain your responsibility.
+          </p>
+        </section>
+
+        <section>
+          <h3>4. Data and Backup Responsibility</h3>
+          <p>
+            The current version of the app is primarily based on local processing and does not provide cloud sync by default. You are responsible for deciding whether to export backups or image-text delivery packages, where to store them, and whether to keep multiple copies. Risks of data loss, disclosure, or irrecoverability caused by device damage, system reinstallation, mistaken deletion, mistaken overwrite, third-party software handling, third-party cloud sync, or your own file sharing remain your responsibility.
+          </p>
+        </section>
+
+        <section>
+          <h3>5. Permissions, System Capabilities, and Third-Party Services</h3>
+          <p>
+            The current version does not request sensitive system permissions, and its core features run fully offline. Unless otherwise required by law or necessary for implementation, the current version does not rely on built-in third-party services for advertising, commercial analytics, social login, maps, payment, or push notifications as a condition for basic operation. If a future version adds such permissions, system capabilities, or third-party services, the actual version behavior, privacy policy, and in-app notices will prevail.
+          </p>
+        </section>
+
+        <section>
+          <h3>6. Intellectual Property</h3>
+          <p>
+            Except for creative content over which you lawfully hold rights, the software, interface design, texts, structure, graphics, marks, and related intellectual property of this app belong to the developer or the lawful right holder. Without prior written permission, you may not reproduce, distribute, lease, lend, sell, reverse engineer, decompile, disassemble, adapt, or otherwise use the app beyond the permitted scope, unless applicable law expressly allows it.
+          </p>
+        </section>
+
+        <section>
+          <h3>7. Service Changes, Interruptions, and Termination</h3>
+          <p>
+            The developer may update, adjust, interrupt, or terminate app features, interface design, supported device scope, service methods, or legal texts based on product iteration, system compatibility, operational arrangements, compliance requirements, or security needs. If you violate these terms, applicable laws, regulations, or app store rules, the developer may take reasonable measures such as restricting features, suspending service, or stopping distribution of the app.
+          </p>
+        </section>
+
+        <section>
+          <h3>8. Limitation of Liability and Disclaimer</h3>
+          <p>
+            To the extent permitted by law, the app will make reasonable efforts to provide stable service, but it does not guarantee absolute continuity or error-free operation, and it makes no express or implied warranty regarding the accuracy, completeness, or suitability of the statistics, validation, and display results or the assembled prompt text generated by the app. For restricted use, data risks, or other losses caused by system failure, device compatibility, force majeure, regulatory requirements, or your own improper operation, the developer will bear liability only to the extent required by applicable law.
+          </p>
+        </section>
+
+        <section>
+          <h3>9. Governing Law and Dispute Resolution</h3>
+          <p>
+            The formation, effectiveness, interpretation, performance, and dispute resolution of these terms are governed by the laws of the People's Republic of China. Any dispute arising from these terms or your use of the app should first be resolved through friendly consultation. If consultation fails, either party may bring a claim before a court with jurisdiction.
+          </p>
+        </section>
+
+        <section>
+          <h3>10. Contact</h3>
+          <p>
+            If you have any questions, comments, or suggestions regarding these terms or the rules of using the app, you may contact us at tomkuku588@gmail.com, or visit the GitHub repository at https://github.com/tomkuku588-bot/DramaProductionWorkben.
+          </p>
+        </section>
+      </article>
+
+    </main>
+  </div>
+
+  <script>
+    const CONTACT_EMAIL = "tomkuku588@gmail.com";
+
+    const copy = {
+      zh: {
+        eyebrow: "Legal Center",
+        heroTitle: "AI漫剧工作台协议中心",
+        heroSubtitle: "面向 HarmonyOS 上架场景的双语协议页面，集中展示隐私协议与用户协议，适合直接发布到 GitHub Pages。",
+        appLabel: "应用",
+        appNamePrimary: "AI漫剧工作台",
+        appNameSecondary: "DramaProductionWorkbench",
+        contactLabel: "联系邮箱",
+        contactHint: "如联系邮箱或开发者主体信息发生变化，请同步更新页面内容和上架资料。",
+        languageLabel: "语言",
+        documentLabel: "文档",
+        heroSummaryPrivacy: "当前显示：隐私协议",
+        heroSummaryTerms: "当前显示：用户协议",
+        langButtonZh: "中文",
+        langButtonEn: "English",
+        docButtonPrivacy: "隐私协议",
+        docButtonTerms: "用户协议",
+        pageTitlePrivacy: "隐私协议 | AI漫剧工作台",
+        pageTitleTerms: "用户协议 | AI漫剧工作台"
+      },
+      en: {
+        eyebrow: "Legal Center",
+        heroTitle: "DramaProductionWorkbench Legal Center",
+        heroSubtitle: "A bilingual legal page for HarmonyOS listing scenarios, covering the Privacy Policy and Terms of Service and ready for GitHub Pages deployment.",
+        appLabel: "Application",
+        appNamePrimary: "DramaProductionWorkbench",
+        appNameSecondary: "AI Drama Production Workbench",
+        contactLabel: "Contact Email",
+        contactHint: "If the contact email or developer entity changes, update this page and the store listing together.",
+        languageLabel: "Language",
+        documentLabel: "Document",
+        heroSummaryPrivacy: "Now showing: Privacy Policy",
+        heroSummaryTerms: "Now showing: Terms of Service",
+        langButtonZh: "中文",
+        langButtonEn: "English",
+        docButtonPrivacy: "Privacy Policy",
+        docButtonTerms: "Terms of Service",
+        pageTitlePrivacy: "Privacy Policy | DramaProductionWorkbench",
+        pageTitleTerms: "Terms of Service | DramaProductionWorkbench"
+      }
+    };
+
+    const allowedLangs = new Set(["zh", "en"]);
+    const allowedDocs = new Set(["privacy", "terms"]);
+
+    const params = new URLSearchParams(window.location.search);
+    const savedState = (() => {
+      try {
+        return JSON.parse(window.localStorage.getItem("legal-page-state") || "{}");
+      } catch (error) {
+        return {};
+      }
+    })();
+
+    const detectedLang = navigator.language && navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en";
+
+    const state = {
+      lang: allowedLangs.has(params.get("lang")) ? params.get("lang") : (allowedLangs.has(savedState.lang) ? savedState.lang : detectedLang),
+      doc: allowedDocs.has(params.get("doc")) ? params.get("doc") : (allowedDocs.has(savedState.doc) ? savedState.doc : "privacy")
+    };
+
+    const i18nNodes = document.querySelectorAll("[data-i18n]");
+    const langButtons = document.querySelectorAll("[data-lang-switch]");
+    const docButtons = document.querySelectorAll("[data-doc-switch]");
+    const documents = document.querySelectorAll(".document");
+    const heroSummary = document.getElementById("hero-summary");
+    const contactLink = document.getElementById("contact-link");
+
+    function updateCopy() {
+      const locale = copy[state.lang];
+
+      i18nNodes.forEach((node) => {
+        const key = node.dataset.i18n;
+        if (locale[key]) {
+          node.textContent = locale[key];
+        }
+      });
+
+      heroSummary.textContent = state.doc === "privacy" ? locale.heroSummaryPrivacy : locale.heroSummaryTerms;
+      document.title = state.doc === "privacy" ? locale.pageTitlePrivacy : locale.pageTitleTerms;
+      document.documentElement.lang = state.lang === "zh" ? "zh-CN" : "en";
+
+      contactLink.href = "mailto:" + CONTACT_EMAIL;
+      contactLink.textContent = CONTACT_EMAIL;
+
+      langButtons.forEach((button) => {
+        const active = button.dataset.langSwitch === state.lang;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
+        button.textContent = button.dataset.langSwitch === "zh" ? locale.langButtonZh : locale.langButtonEn;
+      });
+
+      docButtons.forEach((button) => {
+        const active = button.dataset.docSwitch === state.doc;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
+        button.textContent = button.dataset.docSwitch === "privacy" ? locale.docButtonPrivacy : locale.docButtonTerms;
+      });
+    }
+
+    function updateDocuments() {
+      documents.forEach((node) => {
+        const visible = node.dataset.lang === state.lang && node.dataset.doc === state.doc;
+        node.classList.toggle("is-visible", visible);
+      });
+    }
+
+    function syncUrlAndStorage() {
+      const next = new URL(window.location.href);
+      next.searchParams.set("lang", state.lang);
+      next.searchParams.set("doc", state.doc);
+      window.history.replaceState({}, "", next);
+      window.localStorage.setItem("legal-page-state", JSON.stringify(state));
+    }
+
+    function render() {
+      updateCopy();
+      updateDocuments();
+      syncUrlAndStorage();
+    }
+
+    langButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const nextLang = button.dataset.langSwitch;
+        if (!allowedLangs.has(nextLang) || nextLang === state.lang) {
+          return;
+        }
+        state.lang = nextLang;
+        render();
+      });
+    });
+
+    docButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const nextDoc = button.dataset.docSwitch;
+        if (!allowedDocs.has(nextDoc) || nextDoc === state.doc) {
+          return;
+        }
+        state.doc = nextDoc;
+        render();
+      });
+    });
+
+    render();
+  </script>
+</body>
+</html>
