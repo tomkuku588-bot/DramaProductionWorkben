@@ -1,6 +1,6 @@
 # DramaProductionWorkbench Terms of Service
 
-- App Name: AI Drama Production Workbench (DramaProductionWorkbench)
+- App Name: Drama Production Workbench (DramaProductionWorkbench)
 - Package: com.xmgod.dramaworkbench
 - Version: 1.0.0
 - Updated on: 2026-10-16

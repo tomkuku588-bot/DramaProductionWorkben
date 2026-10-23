@@ -1,13 +1,13 @@
-# AI漫剧工作台隐私政策
+# 漫剧工作台隐私政策
 
-- 应用名称：AI漫剧工作台（DramaProductionWorkbench）
+- 应用名称：漫剧工作台（DramaProductionWorkbench）
 - 包名：com.xmgod.dramaworkbench
 - 版本：1.0.0
 - 更新日期：2026-10-16
 - 生效日期：2026-10-16
 - 联系邮箱：tomkuku588@gmail.com
 
-欢迎使用AI漫剧工作台（DramaProductionWorkbench）。本政策适用于AI漫剧工作台 HarmonyOS 版本在安装、使用等过程中对信息的处理方式。开发者/运营者为本应用的发布主体，具体以华为应用市场页面公示的实名认证主体为准；联系邮箱为 tomkuku588@gmail.com。本应用是一款离线运行的创作工具，免费、无广告、无需注册。
+欢迎使用漫剧工作台（DramaProductionWorkbench）。本政策适用于漫剧工作台 HarmonyOS 版本在安装、使用等过程中对信息的处理方式。开发者/运营者为本应用的发布主体，具体以华为应用市场页面公示的实名认证主体为准；联系邮箱为 tomkuku588@gmail.com。本应用是一款离线运行的创作工具，免费、无广告、无需注册。
 
 ## 1. 我们处理的信息范围及用途
 

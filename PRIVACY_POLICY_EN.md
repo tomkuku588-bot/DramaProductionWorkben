@@ -1,13 +1,13 @@
 # DramaProductionWorkbench Privacy Policy
 
-- App Name: AI Drama Production Workbench (DramaProductionWorkbench)
+- App Name: Drama Production Workbench (DramaProductionWorkbench)
 - Package: com.xmgod.dramaworkbench
 - Version: 1.0.0
 - Updated on: 2026-10-16
 - Effective on: 2026-10-16
 - Contact Email: tomkuku588@gmail.com
 
-Welcome to DramaProductionWorkbench (AI Drama Production Workbench). This policy applies to the HarmonyOS version of the app and explains how information is handled when you install and use it. The developer/operator is the entity publishing the app, as displayed on the AppGallery listing under the verified developer identity. The contact email is tomkuku588@gmail.com. The app is an offline creation tool that is free, ad-free, and requires no registration.
+Welcome to Drama Production Workbench (DramaProductionWorkbench). This policy applies to the HarmonyOS version of the app and explains how information is handled when you install and use it. The developer/operator is the entity publishing the app, as displayed on the AppGallery listing under the verified developer identity. The contact email is tomkuku588@gmail.com. The app is an offline creation tool that is free, ad-free, and requires no registration.
 
 ## 1. What Information We Process and Why
 

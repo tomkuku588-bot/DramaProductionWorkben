@@ -1,10 +1,10 @@
 # DramaProductionWorkbench Pages
 
-AI漫剧工作台的 GitHub Pages 静态页面仓库，用于托管隐私协议和用户协议。
+漫剧工作台的 GitHub Pages 静态页面仓库，用于托管隐私协议和用户协议。
 
 ## 应用信息
 
-- 应用名称：AI漫剧工作台（DramaProductionWorkbench）
+- 应用名称：漫剧工作台（DramaProductionWorkbench）
 - 包名：com.xmgod.dramaworkbench
 - 版本：1.0.0
 - 应用源码仓库（Gitee）：git@gitee.com:kuku-harmonyos/drama-production-workbench.git
